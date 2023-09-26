@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Venta de casa en Cartago!",
+    "bedrooms": 3,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, velit et sagittis imperdiet, nibh nisl efficitur quam, et molestie nulla tellus vitae mauris. Pellentesque a dui id orci accumsan suscipit. Duis non velit auctor, lobortis dui et, tincidunt nibh. Cras risus metus, interdum nec fringilla vel, accumsan ac neque. Ut quis velit ornare, efficitur mauris ut, euismod mi. Etiam quis vehicula urna. Sed eleifend condimentum posuere.",
+    "bathrooms": 2,
+    "squarefeet": 200,
+    "sellorrent": "Venta",
+    "localization": "Tres Rios, Cartago",
+    "price": "$150.000",
+    "images": {
+      "image1": "src/assets/placeholderHouse/380350726_997423344927410_850516427393826786_n.jpg",
+      "image2": "src/assets/placeholderHouse/380352077_997423388260739_4617773567443279355_n.jpg",
+      "image3": "src/assets/placeholderHouse/380360613_997423411594070_3981857586783118685_n.jpg",
+      "image4": "src/assets/placeholderHouse/382216872_997423104927434_2265511154321251799_n.jpg",
+      "image5": "src/assets/placeholderHouse/382235106_997423438260734_6742269625879331830_n.jpg"
+    }
+  }
+]

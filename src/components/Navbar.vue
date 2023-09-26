@@ -24,7 +24,7 @@
 <script setup lang="ts">
 // import { gsap } from "gsap";
 
-const authUser = true;
+const authUser = false;
 </script>
 
 <style scoped lang="scss">
