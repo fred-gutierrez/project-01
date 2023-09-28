@@ -5,8 +5,10 @@
       :key="postData.id"
       class="post-background"
     >
-      <div class="post-grid">
+      <div class="carousel-container">
         <Carousel :images="postData.images" />
+      </div>
+      <div class="post-grid">
         <h3>{{ postData.title }}</h3>
         <p>{{ postData.description }}</p>
       </div>
@@ -22,25 +24,29 @@ import Carousel from "./Carousel.vue";
 <style scoped lang="scss">
 .post-container {
   list-style: none;
+  justify-content: center;
   // Post Grid System
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 400px);
 }
 
 .post-background {
   background-color: gray;
   align-items: center;
   border-radius: 5px;
-  box-shadow: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.carousel-container {
+  height: 230px;
+  width: 100%;
 }
 
 .post-grid {
   display: grid;
-}
-
-.post-images {
-  height: 100px;
-  object-fit: cover;
+  padding: 15px;
 }
 </style>
