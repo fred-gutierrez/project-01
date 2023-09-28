@@ -1,8 +1,12 @@
 <template>
   <section aria-label="Property Images">
     <div class="carousel">
-      <button class="carousel-button prev" @click="prevSlide">&#60;</button>
-      <button class="carousel-button next" @click="nextSlide">&#62;</button>
+      <button class="carousel-button prev" @click="prevSlide">
+        <font-awesome-icon :icon="['fas', 'chevron-left']" />
+      </button>
+      <button class="carousel-button next" @click="nextSlide">
+        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+      </button>
       <ul>
         <li
           v-for="(image, index) in images"
@@ -12,6 +16,14 @@
           <img :src="image" alt="Property Image" class="slide-images" />
         </li>
       </ul>
+    </div>
+    <div class="dot-indicators">
+      <button
+        v-for="(image, index) in images"
+        :key="index"
+        @click="goToSlide(index)"
+        :class="[index === currentIndex ? 'dot dot-active' : 'dot']"
+      ></button>
     </div>
   </section>
 </template>
@@ -28,6 +40,10 @@ const prevSlide = () => {
 
 const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % images.length;
+};
+
+const goToSlide = (index: number) => {
+  currentIndex.value = index;
 };
 </script>
 
@@ -49,6 +65,12 @@ const nextSlide = () => {
   transition-delay: 200ms;
 }
 
+.slide-active {
+  opacity: 1 !important;
+  z-index: 1;
+  transition-delay: 0ms;
+}
+
 .slide-images {
   display: block;
   max-width: 100%;
@@ -58,27 +80,19 @@ const nextSlide = () => {
   margin: 0 auto;
 }
 
-.slide-active {
-  opacity: 1 !important;
-  z-index: 1;
-  transition-delay: 0ms;
-}
-
 .carousel-button {
   z-index: 2;
   position: absolute;
   background: none;
   border: none;
-  font-size: 3rem;
-  transform: translateY(150%);
+  font-size: 2rem;
+  transform: translateY(250%);
   cursor: pointer;
   color: #000;
   border-radius: 25%;
   padding: 0 0.5rem;
-  background: rgba(0, 0, 0, 0.1);
   &:hover {
     color: white;
-    background: rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -88,5 +102,33 @@ const nextSlide = () => {
 
 .carousel-button.next {
   right: 1rem;
+}
+
+.image-indicator {
+  position: absolute;
+  background: none;
+  border: none;
+}
+
+.dot-indicators {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-200%);
+}
+
+.dot {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.dot-active {
+  background-color: #fff;
 }
 </style>
