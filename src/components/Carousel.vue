@@ -2,10 +2,8 @@
   <section aria-label="Property Images">
     <div class="carousel">
       <button class="carousel-button prev" @click="prevSlide">
-        <font-awesome-icon :icon="['fas', 'chevron-left']" />
-      </button>
-      <button class="carousel-button next" @click="nextSlide">
-        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+        <font-awesome-icon class="chevron" :icon="['fas', 'chevron-left']" />
+      </button> <button class="carousel-button next" @click="nextSlide"> <font-awesome-icon class="chevron" :icon="['fas', 'chevron-right']" />
       </button>
       <ul>
         <li
@@ -17,7 +15,7 @@
         </li>
       </ul>
     </div>
-    <div class="dot-indicators">
+    <div class="dot-container">
       <button
         v-for="(image, index) in images"
         :key="index"
@@ -55,6 +53,13 @@ const goToSlide = (index: number) => {
     list-style: none;
     padding: 0;
   }
+  &:hover .carousel-button {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0s,
+      opacity 0.2s;
+  }
 }
 
 .slide {
@@ -74,7 +79,7 @@ const goToSlide = (index: number) => {
 .slide-images {
   display: block;
   max-width: 100%;
-  height: 230px;
+  height: 250px;
   object-fit: cover;
   object-position: center;
   margin: 0 auto;
@@ -88,12 +93,16 @@ const goToSlide = (index: number) => {
   font-size: 2rem;
   transform: translateY(250%);
   cursor: pointer;
-  color: #000;
+  color: #fff;
   border-radius: 25%;
   padding: 0 0.5rem;
-  &:hover {
-    color: white;
-  }
+  filter: drop-shadow(1px 1px 9px #000);
+
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0s,
+    opacity 0.2s;
 }
 
 .carousel-button.prev {
@@ -110,7 +119,7 @@ const goToSlide = (index: number) => {
   border: none;
 }
 
-.dot-indicators {
+.dot-container {
   position: relative;
   display: flex;
   justify-content: center;

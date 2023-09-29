@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="navbar-left">
       <a href="#" class="logo">
-        <img src="../assets/brand/placeholder_logo.png" alt="Logo" />
+        PROJECT-01
       </a>
     </div>
     <div class="navbar-right">
@@ -33,7 +33,7 @@ const authUser = false;
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 10px 8%;
+  padding: 20px 8%;
 }
 
 .navbar-left {
@@ -56,8 +56,14 @@ const authUser = false;
   color: #000;
 }
 
-.logo img {
+.logo {
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-decoration: none;
+  img {
   max-height: 60px;
+  }
 }
 
 .sign-up {

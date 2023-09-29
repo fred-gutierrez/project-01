@@ -7,8 +7,8 @@
     "bathrooms": 2,
     "squarefeet": 200,
     "sellorrent": "Venta",
-    "localization": "Tres Rios, Cartago",
-    "price": "$150.000",
+    "location": "Tres Rios, Cartago, Curridabat, Alajuela",
+    "price": "₡950.000.000",
     "images": [
       "src/assets/placeholderHouse/380350726_997423344927410_850516427393826786_n.jpg",
       "src/assets/placeholderHouse/380352077_997423388260739_4617773567443279355_n.jpg",
@@ -25,7 +25,7 @@
     "bathrooms": 2,
     "squarefeet": 200,
     "sellorrent": "Venta",
-    "localization": "Tres Rios, Cartago",
+    "location": "Tres Rios, Cartago",
     "price": "$150.000",
     "images": [
       "src/assets/placeholderHouse/380350726_997423344927410_850516427393826786_n.jpg",
@@ -41,7 +41,7 @@
     "bathrooms": 2,
     "squarefeet": 200,
     "sellorrent": "Venta",
-    "localization": "Tres Rios, Cartago",
+    "location": "Tres Rios, Cartago",
     "price": "$150.000",
     "images": [
       "src/assets/placeholderHouse/380350726_997423344927410_850516427393826786_n.jpg",
