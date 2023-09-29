@@ -9,8 +9,22 @@
         <Carousel :images="postData.images" />
       </div>
       <div class="post-details">
-        <h2>{{ postData.price }}</h2>
-        <h3>{{ postData.title }}</h3>
+        <div class="price-grid">
+          <h2>{{ postData.price }}</h2>
+          <p>
+            En {{ postData.typeofpurchase }}
+            <font-awesome-icon
+              class="dot-indicator"
+              :class="
+                postData.typeofpurchase === 'Venta'
+                  ? 'venta-top'
+                  : 'alquiler-top'
+              "
+              :icon="['fas', 'circle']"
+            />
+          </p>
+        </div>
+        <h3>{{ truncatedTitle(postData.title) }}</h3>
         <p>{{ truncatedDescription(postData.description) }}</p>
         <div class="post-property-details">
           <p class="property-detail">
@@ -23,12 +37,14 @@
           </p>
           <p class="property-detail">
             <span style="font-weight: bold">{{ postData.squarefeet }}</span
-            >mt2
+            >m²
           </p>
         </div>
-        <div class="post-grid">
-          <div class="post-grid-left">{{ postData.location }}</div>
-          <div class="post-grid-right"><a href=""><button>Ver Detalles</button></a></div>
+        <div class="location-grid">
+          <div class="location-grid-left">{{ postData.location }}</div>
+          <div class="location-grid-right">
+            <a href=""><button>Ver Detalles</button></a>
+          </div>
         </div>
       </div>
     </li>
@@ -45,6 +61,13 @@ const truncatedDescription = (description: string) => {
   }
   return description;
 };
+
+const truncatedTitle = (title: string) => {
+  if (title.length > 60) {
+    return `${title.slice(0, 60)}...`;
+  }
+  return title;
+};
 </script>
 
 <style scoped lang="scss">
@@ -54,7 +77,7 @@ const truncatedDescription = (description: string) => {
   // Post Grid System
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, 390px);
 }
 
 .post-background {
@@ -72,11 +95,35 @@ const truncatedDescription = (description: string) => {
 }
 
 .post-details {
-  display: grid;
   padding: 15px;
   h3 {
-    line-height: 35px;
+    margin: 8px 0;
   }
+}
+
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  p {
+    justify-self: end;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dot-indicator {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.alquiler-top {
+  color: skyblue;
+}
+
+.venta-top {
+  color: green;
 }
 
 .post-property-details {
@@ -87,22 +134,22 @@ const truncatedDescription = (description: string) => {
   }
 }
 
-.post-grid {
+.location-grid {
   display: grid;
   margin-top: 12px;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: space-between;
-  .post-grid-left {
+  .location-grid-left {
     font-weight: 300;
   }
-  .post-grid-right {
+  .location-grid-right {
     justify-self: end;
     button {
       background: none;
       border-radius: 10px;
       padding: 8px 14px;
-      border: 2px solid black;
+      border: 3px solid #000;
       font-size: 16px;
       color: #000;
       font-weight: bold;

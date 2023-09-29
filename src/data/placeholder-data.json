@@ -6,7 +6,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, velit et sagittis imperdiet, nibh nisl efficitur quam, et molestie nulla tellus vitae mauris. Pellentesque a dui id orci accumsan suscipit. Duis non velit auctor, lobortis dui et, tincidunt nibh. Cras risus metus, interdum nec fringilla vel, accumsan ac neque. Ut quis velit ornare, efficitur mauris ut, euismod mi. Etiam quis vehicula urna. Sed eleifend condimentum posuere.",
     "bathrooms": 2,
     "squarefeet": 200,
-    "sellorrent": "Venta",
+    "typeofpurchase": "Venta",
     "location": "Tres Rios, Cartago, Curridabat, Alajuela",
     "price": "₡950.000.000",
     "images": [
@@ -24,7 +24,7 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, velit et sagittis imperdiet, nibh nisl efficitur quam, et molestie nulla tellus vitae mauris. Pellentesque a dui id orci accumsan suscipit. Duis non velit auctor, lobortis dui et, tincidunt nibh. Cras risus metus, interdum nec fringilla vel, accumsan ac neque. Ut quis velit ornare, efficitur mauris ut, euismod mi. Etiam quis vehicula urna. Sed eleifend condimentum posuere.",
     "bathrooms": 2,
     "squarefeet": 200,
-    "sellorrent": "Venta",
+    "typeofpurchase": "Venta",
     "location": "Tres Rios, Cartago",
     "price": "$150.000",
     "images": [
@@ -40,7 +40,24 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, velit et sagittis imperdiet, nibh nisl efficitur quam, et molestie nulla tellus vitae mauris. Pellentesque a dui id orci accumsan suscipit. Duis non velit auctor, lobortis dui et, tincidunt nibh. Cras risus metus, interdum nec fringilla vel, accumsan ac neque. Ut quis velit ornare, efficitur mauris ut, euismod mi. Etiam quis vehicula urna. Sed eleifend condimentum posuere.",
     "bathrooms": 2,
     "squarefeet": 200,
-    "sellorrent": "Venta",
+    "typeofpurchase": "Alquiler",
+    "location": "Tres Rios, Cartago",
+    "price": "$150.000",
+    "images": [
+      "src/assets/placeholderHouse/380350726_997423344927410_850516427393826786_n.jpg",
+      "src/assets/placeholderHouse/380352077_997423388260739_4617773567443279355_n.jpg",
+      "src/assets/placeholderHouse/380360613_997423411594070_3981857586783118685_n.jpg",
+      "src/assets/placeholderHouse/382216872_997423104927434_2265511154321251799_n.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Venta de casa en Curridabat Centro muy AK7! Compre la casa ya webon!!!",
+    "bedrooms": 31,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum, velit et sagittis imperdiet, nibh nisl efficitur quam, et molestie nulla tellus vitae mauris. Pellentesque a dui id orci accumsan suscipit. Duis non velit auctor, lobortis dui et, tincidunt nibh. Cras risus metus, interdum nec fringilla vel, accumsan ac neque. Ut quis velit ornare, efficitur mauris ut, euismod mi. Etiam quis vehicula urna. Sed eleifend condimentum posuere.",
+    "bathrooms": 9,
+    "squarefeet": 1500,
+    "typeofpurchase": "Venta",
     "location": "Tres Rios, Cartago",
     "price": "$150.000",
     "images": [
