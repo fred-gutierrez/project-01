@@ -43,7 +43,7 @@
         <div class="location-grid">
           <div class="location-grid-left">{{ postData.location }}</div>
           <div class="location-grid-right">
-            <a href=""><button>Ver Detalles</button></a>
+            <a href="" style="text-decoration: none;"><div>Ver Detalles</div></a>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@ const truncatedTitle = (title: string) => {
   }
   .location-grid-right {
     justify-self: end;
-    button {
+    div {
       background: none;
       border-radius: 10px;
       padding: 8px 14px;

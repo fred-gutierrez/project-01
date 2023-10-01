@@ -1,20 +1,18 @@
 <template>
   <nav class="navbar">
     <div class="navbar-left">
-      <a href="#" class="logo">
-        PROJECT-01
-      </a>
+      <a href="#" class="logo">PROJECT-01</a>
     </div>
     <div class="navbar-right">
       <ul v-if="authUser">
-        <a href=""><div class="profile"></div></a>
+        <a href=""><div class="profile-picture"></div></a>
       </ul>
       <ul v-else>
         <li class="nav-link">
-          <a href="#">Sign In</a>
+          <a href="#">Iniciar Sesión</a>
         </li>
         <li class="nav-link">
-          <a href="#"><div class="sign-up">Sign Up</div></a>
+          <a href="#" style="text-decoration: none;"><div class="sign-up">Registrarme</div></a>
         </li>
       </ul>
     </div>
@@ -32,7 +30,6 @@ const authUser = false;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
   padding: 20px 8%;
 }
 
@@ -53,16 +50,22 @@ const authUser = false;
 
 .navbar-right a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .logo {
-  color: #000;
+  color: #fff;
   font-weight: bold;
   letter-spacing: 5px;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
   img {
-  max-height: 60px;
+    max-height: 60px;
   }
 }
 
@@ -70,19 +73,37 @@ const authUser = false;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px;
+  width: 120px;
   height: 40px;
-  background-color: #28221e;
   border-radius: 10px;
   font-weight: bold;
+  background-color: #28221e;
   color: #fff;
 }
 
-.profile {
-  width: 50px;
-  height: 50px;
-  background-color: #fff;
+.profile-picture {
+  width: 55px;
+  height: 55px;
   border-radius: 100%;
-  border: 3px solid black;
+
+  background-image: url("../assets/fred-image3.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    background-color: #fff;
+  }
+  .navbar-right a {
+    color: #000;
+  }
+  .logo {
+    color: #000;
+  }
+  .sign-up {
+    background-color: #28221e;
+    color: #fff;
+  }
 }
 </style>
