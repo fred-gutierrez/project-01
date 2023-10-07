@@ -1,19 +1,13 @@
 <template>
-  <header class="app-header">
-    <Navbar />
-    <Header />
-  </header>
-  <section class="app-body">
-    <AdItem />
-  </section>
+  <Navbar />
+  <Homepage />
   <Footer />
 </template>
 
 <script setup lang="ts">
 import Navbar from "/src/components/Navbar.vue";
+import Homepage from "/src/pages/Homepage.vue";
 import Footer from "/src/components/Footer.vue";
-import AdItem from "/src/components/AdItem.vue";
-import Header from "/src/components/Header.vue";
 </script>
 
 <style lang="scss">
@@ -30,15 +24,5 @@ import Header from "/src/components/Header.vue";
 body {
   font-family: "Inter", sans-serif;
   background-color: #fff;
-}
-
-.app-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./assets/luxury_house.jpg");
-  background-size: cover;
-  background-position: top;
-}
-
-.app-body {
-margin-top: 80px;
 }
 </style>

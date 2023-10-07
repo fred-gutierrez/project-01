@@ -4,25 +4,38 @@
       <a href="#" class="logo">PROJECT-01</a>
     </div>
     <div class="navbar-right">
-      <ul v-if="authUser">
-        <a href=""><div class="profile-picture"></div></a>
-      </ul>
-      <ul v-else>
-        <li class="nav-link">
-          <a href="#">Iniciar Sesión</a>
-        </li>
-        <li class="nav-link">
-          <a href="#" style="text-decoration: none;"><div class="sign-up">Registrarme</div></a>
-        </li>
-      </ul>
+      <i class="fa-solid fa-bars fa-xl open-menu-btn" @click="toggleMenu"></i>
+      <div class="menu" :class="{ active: menuVisible }">
+        <div class="close-menu-btn" @click="toggleMenu">
+          <i class="fa-solid fa-x fa-xl"></i>
+        </div>
+        <ul v-if="authUser">
+          <a href=""><div class="profile-picture"></div></a>
+        </ul>
+        <ul v-else>
+          <li class="nav-link">
+            <a href="#">Iniciar Sesión</a>
+          </li>
+          <li class="nav-link">
+            <a href="#" style="text-decoration: none"
+              ><div class="sign-up">Registrarme</div></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 // import { gsap } from "gsap";
-
 const authUser = false;
+let menuVisible = ref(false);
+
+const toggleMenu = () => {
+  menuVisible.value = !menuVisible.value;
+};
 </script>
 
 <style scoped lang="scss">
@@ -30,7 +43,7 @@ const authUser = false;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 30px 8%;
 }
 
 .navbar-left {
@@ -57,7 +70,7 @@ const authUser = false;
 }
 
 .logo {
-  color: #fff;
+  color: #000;
   font-weight: bold;
   letter-spacing: 5px;
   text-decoration: none;
@@ -91,19 +104,60 @@ const authUser = false;
   background-size: cover;
 }
 
+.open-menu-btn {
+  display: block;
+  cursor: pointer;
+  padding: 20px;
+  color: #000;
+  &:focus {
+    outline: none;
+  }
+}
+
+.close-menu-btn {
+  display: block;
+  cursor: pointer;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 23px 8% 0 40px;
+  background-color: #fff;
+  & > * {
+    margin-left: auto;
+  }
+}
+
+.menu.active {
+  display: flex;
+}
+
+.menu a {
+  color: #000;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
 @media (min-width: 768px) {
-  .navbar {
-    background-color: #fff;
+  .menu {
+    display: flex;
+    position: static;
+    background: transparent;
+    padding: 0;
   }
-  .navbar-right a {
-    color: #000;
+  .open-menu-btn {
+    display: none;
   }
-  .logo {
-    color: #000;
-  }
-  .sign-up {
-    background-color: #28221e;
-    color: #fff;
+  .close-menu-btn {
+    display: none;
   }
 }
 </style>

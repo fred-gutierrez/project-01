@@ -2,8 +2,10 @@
   <section aria-label="Property Images">
     <div class="carousel">
       <button class="carousel-button prev" @click="prevSlide">
-        <font-awesome-icon class="chevron" :icon="['fas', 'chevron-left']" />
-      </button> <button class="carousel-button next" @click="nextSlide"> <font-awesome-icon class="chevron" :icon="['fas', 'chevron-right']" />
+        <i class="fa-solid fa-chevron-left chevron"></i>
+      </button>
+      <button class="carousel-button next" @click="nextSlide">
+        <i class="fa-solid fa-chevron-right chevron"></i>
       </button>
       <ul>
         <li

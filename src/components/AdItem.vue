@@ -1,54 +1,49 @@
 <template>
-  <ul class="post-container">
-    <li
-      v-for="postData in placeholderdata"
-      :key="postData.id"
-      class="post-background"
-    >
-      <div class="carousel-container">
-        <Carousel :images="postData.images" />
+  <li
+    v-for="postData in placeholderdata"
+    :key="postData.id"
+    class="post-background"
+  >
+    <div class="carousel-container">
+      <Carousel :images="postData.images" />
+    </div>
+    <div class="post-details">
+      <div class="price-grid">
+        <h2>{{ postData.price }}</h2>
+        <p>
+          En {{ postData.typeofpurchase }}
+          <i
+            class="fa-solid fa-circle"
+            :class="
+              postData.typeofpurchase === 'Venta' ? 'venta-top' : 'alquiler-top'
+            "
+          ></i>
+        </p>
       </div>
-      <div class="post-details">
-        <div class="price-grid">
-          <h2>{{ postData.price }}</h2>
-          <p>
-            En {{ postData.typeofpurchase }}
-            <font-awesome-icon
-              class="dot-indicator"
-              :class="
-                postData.typeofpurchase === 'Venta'
-                  ? 'venta-top'
-                  : 'alquiler-top'
-              "
-              :icon="['fas', 'circle']"
-            />
-          </p>
-        </div>
-        <h3>{{ truncatedTitle(postData.title) }}</h3>
-        <p>{{ truncatedDescription(postData.description) }}</p>
-        <div class="post-property-details">
-          <p class="property-detail">
-            <span style="font-weight: bold">{{ postData.bedrooms }}</span>
-            Dormitorios
-          </p>
-          <p class="property-detail">
-            <span style="font-weight: bold">{{ postData.bathrooms }}</span>
-            Baños
-          </p>
-          <p class="property-detail">
-            <span style="font-weight: bold">{{ postData.squarefeet }}</span
-            >m²
-          </p>
-        </div>
-        <div class="location-grid">
-          <div class="location-grid-left">{{ postData.location }}</div>
-          <div class="location-grid-right">
-            <a href="" style="text-decoration: none;"><div>Ver Detalles</div></a>
-          </div>
+      <h3>{{ truncatedTitle(postData.title) }}</h3>
+      <p>{{ truncatedDescription(postData.description) }}</p>
+      <div class="post-property-details">
+        <p class="property-detail">
+          <span style="font-weight: bold">{{ postData.bedrooms }}</span>
+          Dormitorios
+        </p>
+        <p class="property-detail">
+          <span style="font-weight: bold">{{ postData.bathrooms }}</span>
+          Baños
+        </p>
+        <p class="property-detail">
+          <span style="font-weight: bold">{{ postData.squarefeet }}</span
+          >m²
+        </p>
+      </div>
+      <div class="location-grid">
+        <div class="location-grid-left">{{ postData.location }}</div>
+        <div class="location-grid-right">
+          <a href="" style="text-decoration: none"><div>Ver Detalles</div></a>
         </div>
       </div>
-    </li>
-  </ul>
+    </div>
+  </li>
 </template>
 
 <script setup lang="ts">
@@ -71,16 +66,17 @@ const truncatedTitle = (title: string) => {
 </script>
 
 <style scoped lang="scss">
-.post-container {
-  list-style: none;
-  justify-content: center;
-  // Post Grid System
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(3, 390px);
-}
+// .post-container {
+// list-style: none;
+// justify-content: center;
+// Post Grid System
+// display: grid;
+// gap: 15px;
+// grid-template-columns: repeat(3, 350px);
+// }
 
 .post-background {
+  width: 360px;
   background-color: white;
   border-radius: 8px;
   display: flex;
@@ -113,7 +109,7 @@ const truncatedTitle = (title: string) => {
   }
 }
 
-.dot-indicator {
+.fa-circle {
   font-size: 13px;
   margin-left: 5px;
 }
