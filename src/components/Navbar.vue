@@ -1,41 +1,72 @@
 <template>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <a href="#" class="logo">PROJECT-01</a>
-    </div>
-    <div class="navbar-right">
-      <i class="fa-solid fa-bars fa-xl open-menu-btn" @click="toggleMenu"></i>
-      <div class="menu" :class="{ active: menuVisible }">
-        <div class="close-menu-btn" @click="toggleMenu">
-          <i class="fa-solid fa-x fa-xl"></i>
-        </div>
-        <ul v-if="authUser">
-          <a href=""><div class="profile-picture"></div></a>
-        </ul>
-        <ul v-else>
-          <li class="nav-link">
-            <a href="#">Iniciar Sesión</a>
-          </li>
-          <li class="nav-link">
-            <a href="#" style="text-decoration: none"
-              ><div class="sign-up">Registrarme</div></a
-            >
-          </li>
-        </ul>
+  <div>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="#" class="logo">PROJECT-01</a>
       </div>
-    </div>
-  </nav>
+      <div class="navbar-right">
+        <i class="fa-solid fa-bars fa-xl open-menu-btn" @click="toggleMenu"></i>
+        <div class="menu" :class="{ active: menuVisible }">
+          <div class="close-menu-btn" @click="toggleMenu">
+            <i class="fa-solid fa-x fa-xl"></i>
+          </div>
+          <ul v-if="authUser">
+            <a href=""><div class="profile-picture"></div></a>
+          </ul>
+          <ul v-else>
+            <li class="nav-link">
+              <a href="#">Iniciar Sesión</a>
+            </li>
+            <li class="nav-link">
+              <a href="#" style="text-decoration: none"
+                ><div class="sign-up">Registrarme</div></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <nav class="sticky-navbar">
+      <SearchBar @input="updateSearchTerm" />
+    </nav>
+  </div>
 </template>
 
 <script setup lang="ts">
+import SearchBar from "./SearchBar.vue";
+
+import { setSearchTerm } from "../stores/searchStore.js";
 import { ref } from "vue";
-// import { gsap } from "gsap";
+
 const authUser = false;
 let menuVisible = ref(false);
+
+const updateSearchTerm = (event: Event) => {
+  setSearchTerm(event.target.value)
+}
 
 const toggleMenu = () => {
   menuVisible.value = !menuVisible.value;
 };
+
+const scrollThreshold = 300;
+
+function toggleStickyNavbar(show: boolean) {
+  const stickyNavbar = document.querySelector(".sticky-navbar") as HTMLElement;
+  if (stickyNavbar) {
+    stickyNavbar.style.display = show ? "block" : "none";
+  }
+}
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+
+  if (scrollTop > scrollThreshold) {
+    toggleStickyNavbar(true);
+  } else {
+    toggleStickyNavbar(false);
+  }
+});
 </script>
 
 <style scoped lang="scss">
@@ -44,6 +75,18 @@ const toggleMenu = () => {
   justify-content: space-between;
   align-items: center;
   padding: 30px 8%;
+}
+
+.sticky-navbar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 10px;
+  text-align: center;
+  background-color: #fff;
 }
 
 .navbar-left {
