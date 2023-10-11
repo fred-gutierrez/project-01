@@ -13,7 +13,7 @@
 import SearchBar from "./SearchBar.vue";
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .header-container {
   height: 60vh;
   text-align: center;

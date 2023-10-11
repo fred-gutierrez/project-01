@@ -11,14 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import { useSearchStore } from "../stores/searchStore.js";
+import { useSearchStore } from "../store/searchStore.js";
 
 const { searchTerm } = useSearchStore();
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .search-container {
-  input {
+  & > input {
     width: 70%;
     max-width: 700px;
     padding: 15px 10px;
@@ -27,7 +27,7 @@ const { searchTerm } = useSearchStore();
     border-radius: 10px 0 0 10px;
     font-size: 13px;
   }
-  button {
+  & > button {
     color: black;
     width: 50px;
     padding: 15px 0;
@@ -36,18 +36,18 @@ const { searchTerm } = useSearchStore();
     font-size: 13px;
     background-color: white;
     &:hover {
-      background-color: gray;
+      background-color: rgb(132, 132, 132);
     }
   }
 }
 
 @media (min-width: 768px) {
   .search-container {
-    input {
+    & > input {
       width: 50%;
       font-size: 19px;
     }
-    button {
+    & > button {
       width: 60px;
       font-size: 19px;
     }

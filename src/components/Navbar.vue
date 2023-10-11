@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import SearchBar from "./SearchBar.vue";
 
-import { setSearchTerm } from "../stores/searchStore.js";
+import { setSearchTerm } from "../store/searchStore.js";
 import { ref } from "vue";
 
 const authUser = false;
@@ -69,7 +69,7 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .navbar {
   display: flex;
   justify-content: space-between;

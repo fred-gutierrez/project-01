@@ -3,6 +3,7 @@
     <Header />
   </header>
   <section class="app-body">
+    <Homepage_cards />
     <div class="app-post-container-wrapper">
       <ul class="app-post-container">
         <AdItem />
@@ -12,20 +13,17 @@
 </template>
 
 <script setup lang="ts">
-import AdItem from "/src/components/AdItem.vue"
-import Header from "/src/components/Header.vue";
+import AdItem from "../components/AdItem.vue"
+import Header from "../components/Header.vue";
+import Homepage_cards from "../components/Homepage_cards.vue";
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .app-header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/luxury_house.jpg");
+    url("../assets/homepage/luxury_house.jpg");
   background-size: cover;
   background-position: top;
-}
-
-.app-body {
-  margin-top: 80px;
 }
 
 .app-post-container-wrapper {

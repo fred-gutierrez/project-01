@@ -47,11 +47,11 @@ const goToSlide = (index: number) => {
 };
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="postcss">
 .carousel {
   text-align: center;
   position: relative;
-  ul {
+  & > ul {
     list-style: none;
     padding: 0;
   }

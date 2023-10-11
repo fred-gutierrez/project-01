@@ -39,7 +39,7 @@
       <div class="location-grid">
         <div class="location-grid-left">{{ postData.location }}</div>
         <div class="location-grid-right">
-          <a href="" style="text-decoration: none"><div>Ver Detalles</div></a>
+          <a href="" style="text-decoration: none"><button>Ver Detalles</button></a>
         </div>
       </div>
     </div>
@@ -65,16 +65,7 @@ const truncatedTitle = (title: string) => {
 };
 </script>
 
-<style scoped lang="scss">
-// .post-container {
-// list-style: none;
-// justify-content: center;
-// Post Grid System
-// display: grid;
-// gap: 15px;
-// grid-template-columns: repeat(3, 350px);
-// }
-
+<style scoped lang="postcss">
 .post-background {
   width: 360px;
   background-color: white;
@@ -92,7 +83,7 @@ const truncatedTitle = (title: string) => {
 
 .post-details {
   padding: 15px;
-  h3 {
+  & > h3 {
     margin: 8px 0;
   }
 }
@@ -101,7 +92,7 @@ const truncatedTitle = (title: string) => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  p {
+  & > p {
     justify-self: end;
     font-weight: 300;
     display: flex;
@@ -136,24 +127,26 @@ const truncatedTitle = (title: string) => {
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: space-between;
-  .location-grid-left {
-    font-weight: 300;
-  }
-  .location-grid-right {
-    justify-self: end;
-    div {
-      background: none;
-      border-radius: 10px;
-      padding: 8px 14px;
-      border: 3px solid #000;
-      font-size: 16px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      &:hover {
-        background-color: #000;
-        color: #fff;
-      }
+}
+
+.location-grid-left {
+  font-weight: 300;
+}
+
+.location-grid-right {
+  justify-self: end;
+  & > a > button {
+    background: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    border: 3px solid #000;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover {
+      background-color: #000;
+      color: #fff;
     }
   }
 }
