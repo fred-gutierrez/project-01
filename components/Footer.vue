@@ -35,14 +35,14 @@ footer {
 }
 
 .footer-top {
-  padding: 40px 6%;
+  padding: 40px 7%;
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .footer-bottom {
-  padding: 25px 6%;
+  padding: 25px 7%;
   background-color: #1b1b1b;
   font-weight: 300;
 }
@@ -50,8 +50,8 @@ footer {
 ul {
   list-style: none;
   & > li {
-    font-size: 1.2rem;
-    margin: 8px 0;
+    font-size: 1.1rem;
+    margin: 10px 0;
     &:hover {
       text-decoration: underline;
     }
