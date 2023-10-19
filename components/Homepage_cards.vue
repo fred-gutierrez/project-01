@@ -95,14 +95,15 @@ const breakWords = (text: string) => {
 }
 
 .card-cta {
-  background-color: orange;
+  background-color: #815a32;
   text-decoration: none;
   padding: 10px 20px;
   color: #fff;
 }
 
 .publish-container {
-  background-color: orange;
+  background-color: #815a32;
+  text-decoration: none;
   width: calc(75%);
   padding: 15px 0;
   text-align: center;

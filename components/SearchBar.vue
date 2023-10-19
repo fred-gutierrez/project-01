@@ -25,7 +25,7 @@ const { searchTerm } = useSearchStore();
     border: 2px solid black;
     border-right: none;
     border-radius: 10px 0 0 10px;
-    font-size: 13px;
+    font-size: 16px;
   }
   & > button {
     color: black;
@@ -33,7 +33,7 @@ const { searchTerm } = useSearchStore();
     padding: 15px 0;
     border: 2px solid black;
     border-radius: 0 10px 10px 0;
-    font-size: 13px;
+    font-size: 16px;
     background-color: white;
     &:hover {
       background-color: rgb(132, 132, 132);

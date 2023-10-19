@@ -17,7 +17,7 @@
 <style scoped lang="postcss">
 .app-header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("homepage/luxury_house.jpg");
+    url("/homepage/luxury_house.jpg");
   background-size: cover;
   background-position: top;
 }
