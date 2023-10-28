@@ -18,6 +18,9 @@ const { searchTerm } = useSearchStore();
 
 <style scoped lang="postcss">
 .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   & > input {
     width: 70%;
     max-width: 700px;
@@ -49,7 +52,7 @@ const { searchTerm } = useSearchStore();
     }
     & > button {
       width: 60px;
-      font-size: 19px;
+      font-size: 18px;
     }
   }
 }

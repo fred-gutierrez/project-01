@@ -5,9 +5,9 @@
       class="card"
       :style="{
         backgroundImage: `linear-gradient(rgba(80, 80, 80, ${
-          item.hovered ? 0.2 : 0.6
+          item.hovered ? 0.3 : 0.6
         }),
-rgba(80, 80, 80, ${item.hovered ? 0.2 : 0.6})), url('${item.imageUrl}')`,
+rgba(80, 80, 80, ${item.hovered ? 0.3 : 0.6})), url('${item.imageUrl}')`,
       }"
       :key="index"
       :href="item.link"
@@ -111,6 +111,15 @@ const breakWords = (text: string) => {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
+}
+
+@media (min-width: 576px) {
+  .card {
+    width: calc(45%);
+  }
+  .publish-container {
+    width: calc(93.5%);
+  }
 }
 
 @media (min-width: 768px) {

@@ -26,6 +26,12 @@
   }
 }
 
+@media (min-width: 576px) {
+  .header-text {
+    font-size: 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .header-text {
     font-size: 2rem;

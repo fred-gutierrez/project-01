@@ -1,15 +1,16 @@
 <template>
   <div>
     <header class="app-header">
-      <Header />
+      <homepageHeader />
     </header>
     <section class="app-body">
-      <Homepage_cards />
+      <homepageCards />
       <div class="app-post-container-wrapper">
         <ul class="app-post-container">
           <AdItem />
         </ul>
       </div>
+      <homepageMostPopular />
     </section>
   </div>
 </template>
